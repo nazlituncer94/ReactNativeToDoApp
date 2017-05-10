@@ -1,4 +1,5 @@
 // @flow
+// Code that generates additional row on to do list 
 
 import React, { Component } from 'react'
 import {
@@ -80,30 +81,14 @@ class Row extends Component {
 
     const editingElement = (
       <View style={styles.container}>
-        <TextInput
-          onChangeText={this.handleChangeTitle}
-          value={this.state.title}
-          style={styles.editInput}
-          onSubmitEditing={this.handleEditItem}
-          autoFocus
-          returnKeyType="done"
-        />
-        <Button
-          onPress={this.handleEditItem}
-          title="EDIT"
-          color="#333"
-          accessibilityLabel="Edit task's title"
-        />
+        
+        
       </View>
     )
 
     return (
       <View style={styles.container}>
-        <Switch
-          onValueChange={() => this.props.onSwitch(item)}
-          value={item.completed}
-          style={styles.changeSwitch}
-        />
+        
         {(this.state.editing) ? editingElement : showElement}
       </View>
     )
@@ -113,17 +98,15 @@ class Row extends Component {
 
 const lineHeight = 30
 const fontSize = 16
-const margin = 10
+const margin = 10 
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
-  changeSwitch: {
-    height: lineHeight,
-  },
+  
   editInput: {
     color: '#333',
     padding: 5,

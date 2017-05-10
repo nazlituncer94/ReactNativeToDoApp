@@ -1,4 +1,6 @@
 // @flow
+// Code for allowing users to enter reminders via a text field box 
+// Each Item gets added to the list 
 
 import React, { Component } from 'react'
 import {
@@ -31,7 +33,7 @@ class AddItem extends Component {
   constructor(props: PropType) {
     super(props)
     this.state = {
-      title: '',
+      title: "",
     }
   }
 
@@ -59,6 +61,7 @@ class AddItem extends Component {
     return (
       <View style={styles.container}>
         <TextInput
+          placeholder = "Don't forget to..."
           onChangeText={this.handleChangeTitle}
           value={this.state.title}
           style={styles.addInput}
@@ -67,8 +70,12 @@ class AddItem extends Component {
         />
         <Button
           onPress={this.handleAddItem}
-          title="ADD"
-          color="#333"
+          title="Add Reminder"
+          //color="#333"
+          //backgroundColor= '#F00'
+          raised={true}
+          theme='dark'
+          overrides={{backgroundColor: '3fffff'}}
           accessibilityLabel="Add task"
           style={styles.addButton}
         />
@@ -79,7 +86,7 @@ class AddItem extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
   addInput: {
     height: 40,
@@ -87,11 +94,11 @@ const styles = StyleSheet.create({
     padding: 5,
     borderColor: '#333',
     borderWidth: (Platform.OS === 'ios') ? 1 : 0,
-    marginRight: 10,
+    marginRight: 0,
   },
   addButton: {
     width: 50,
-    height: 40,
+    height: 50,
     marginLeft: 10,
   },
 })

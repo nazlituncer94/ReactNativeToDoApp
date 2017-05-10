@@ -1,4 +1,6 @@
 // @flow
+// Code that brings together other components 
+// Full list of items added 
 
 import React, { Component } from 'react'
 import {
@@ -155,16 +157,13 @@ class TodoList extends Component {
       />) : null
 
     const activeCount = this.getActiveItemsCount()
-    const toggleLabel = (activeCount === 0) ? '(mark all as uncompleted)' : '(mark all as completed)'
-    const toggleElement = (
-      <Text style={styles.toggleLabel} onPress={this.handleToggleAll}>{toggleLabel}</Text>
-    )
+    
 
     return (
       <View style={styles.container}>
         <View style={styles.labelContainer}>
-          <Text style={styles.tasksLabel}>My tasks</Text>
-          {(this.state.items && this.state.items.length > 0) ? toggleElement : null }
+          
+          
         </View>
         {loadingComponent}
         <ListView
@@ -186,26 +185,23 @@ class TodoList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
   },
   labelContainer: {
-    marginTop: 10,
+    marginTop: 0,
     flexDirection: 'row',
   },
   tasksLabel: {
     marginRight: 10,
   },
-  toggleLabel: {
-    color: '#61DAFB',
-    textDecorationLine: 'underline',
-  },
+  
   loading: {
-    marginTop: 100,
+    marginTop: 50,
   },
   listview: {
     flex: 1,
-    marginTop: 10,
+    marginTop: 0,
   },
 })
 

@@ -1,4 +1,7 @@
 // @flow
+// Code to distinguish between an item on the list that's "done" and still 
+// waiting to be completed 
+// When X is clicked = item marked as done = remove from list 
 
 import React from 'react'
 import {
@@ -57,29 +60,9 @@ const Filters = (props: PropType) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Filter
-          activeFilter={props.filter}
-          filterChange={FILTER_TYPES.ALL}
-          title="ALL"
-          accessibilityLabel="Show all tasks"
-          onFilterChange={props.onFilterChange}
-        />
-        <Filter
-          activeFilter={props.filter}
-          filterChange={FILTER_TYPES.ACTIVE}
-          title="ACTIVE"
-          accessibilityLabel="Show active tasks"
-          onFilterChange={props.onFilterChange}
-        />
-        <Filter
-          activeFilter={props.filter}
-          filterChange={FILTER_TYPES.COMPLETED}
-          title="COMPLETED"
-          accessibilityLabel="Show completed tasks"
-          onFilterChange={props.onFilterChange}
-        />
+        
       </View>
-      <Text style={styles.activeItemsMessage}>{activeItemsMessage}</Text>
+      
     </View>
   )
 }
