@@ -8,5 +8,5 @@ Pre-requisites: * Install Homebrew by pasting the following at a Terminal promp
 
 The code structure of the React Native app: * Common code = Found in the “components” folder within repo	- AddItem.js = Handles user input and adds to to do list.	- Filter.js = Distinguishes between “done” and “still on the list” items.	- Row.js = Generates additional row for each item added by user.	- ToDoList.js = Complete view of application (bringing together other components)* ios folder & index.ios.js → Contains iOS specific code after compile* android folder & index.android.js → Contains Android specific code after compile
 
-TUTORIAL USED: 
+TUTORIALS USED: 
 This application was initiated using the React Native workshop (reference: https://github.com/vtex/workshop-react-native). The tutorial provided was used to build the application (the final version is not the same as that of the tutorial as this was used for guidance). For additional tutorials used, please see my final report. 
